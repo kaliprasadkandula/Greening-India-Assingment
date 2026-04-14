@@ -89,7 +89,21 @@ npm run migrate:dev
 
 ---
 
-## 5. Test Credentials
+## 5. Running Tests
+
+Integration tests run against the live PostgreSQL container (must be running):
+
+```bash
+cd backend
+npm install
+npm test
+```
+
+Tests cover: register, login, validation errors, duplicate email, task creation, status filtering, 403 on non-owner delete, 401 without token.
+
+---
+
+## 6. Test Credentials
 
 Pre-seeded on first `docker compose up`:
 
@@ -100,7 +114,7 @@ Password: password123
 
 ---
 
-## 6. API Reference
+## 7. API Reference
 
 All protected endpoints require: `Authorization: Bearer <token>`
 
@@ -148,7 +162,7 @@ All protected endpoints require: `Authorization: Bearer <token>`
 
 ---
 
-## 7. What I'd Do With More Time
+## 8. What I'd Do With More Time
 
 - **Pagination** — `?page=&limit=` on `/projects` and `/projects/:id/tasks` with total count in the response.
 - **Assignee resolution in task list** — Task cards show assignee names for users already loaded; embedding user name directly in the task response would remove the client-side join.
