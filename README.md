@@ -52,8 +52,8 @@ A task management system with authentication, projects, and tasks. Users can reg
 Requires: Docker and Docker Compose. Nothing else.
 
 ```bash
-git clone https://github.com/your-name/taskflow
-cd taskflow
+git clone https://github.com/kaliprasadkandula/Greening-India-Assingment.git
+cd Greening-India-Assingment
 cp .env.example .env
 docker compose up --build
 ```
@@ -151,7 +151,7 @@ All protected endpoints require: `Authorization: Bearer <token>`
 ## 7. What I'd Do With More Time
 
 - **Pagination** — `?page=&limit=` on `/projects` and `/projects/:id/tasks` with total count in the response.
-- **Assignee resolution** — A `GET /users` endpoint (or embedding user names in task responses) so the frontend can show real names instead of "Assigned to you". The task modal currently only supports "assign to me"; arbitrary user assignment requires this endpoint.
+- **Assignee resolution in task list** — Task cards show assignee names for users already loaded; embedding user name directly in the task response would remove the client-side join.
 - **Better error boundaries in the frontend** — React Error Boundary wrapping page-level components so an uncaught error in one section doesn't blank the whole screen.
 - **Refresh token flow** — Currently the JWT is valid for 24h with no rotation. A refresh token pattern would be safer for production.
 - **Rate limiting** — Add `express-rate-limit` on the auth endpoints to prevent brute-force.
